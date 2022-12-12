@@ -22,18 +22,15 @@ int cmovie(void);
 int movie(void);
 void details(void);
 
-int main()
-{
+int main(){
 	int **seat,choice,price=500,slection,i;
 	seat=(int **)calloc(101,sizeof(int *));
 	for (i=0;i<3;i++)
 		*(seat+i)=(int *)calloc(101,sizeof(int ));
 	int x;
-	while(x!=5)
-	{
+	while(x!=5){
 		choice=choice1();
-		switch(choice)
-		{
+		switch(choice){
 			case 1:
 				price=changeprize(price);
 				break;
@@ -58,13 +55,11 @@ int main()
 		}
 	}
 }
-int changeprize(int prize)
-{
+int changeprize(int prize){
 	char pass[10],pak[10]="pass";
 	printf("Enter the password to change price of ticket: ");
 	scanf("%s",pass);
-	if (strcmp(pass,pak)==0)
-	{
+	if (strcmp(pass,pak)==0){
 		printf("Please enter new price: ");
 		scanf("%d",&prize);
 		system("PAUSE");
@@ -74,12 +69,10 @@ int changeprize(int prize)
 		printf("The entered password is wrong! ");
 	return prize;
 }
-void reservation(int *array,int price,int slection)
-{          
+void reservation(int *array,int price,int slection){          
 		int i,j;
 		printf("\n                                SCREEN\n\n\n");
-		for (i=1;i<=100;i++)
-		{
+		for (i=1;i<=100;i++){
 			if (array[i]==0)
 				printf("%d\t",i);
 			else 
